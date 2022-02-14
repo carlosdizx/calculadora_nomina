@@ -9,10 +9,19 @@ import { MatTableModule } from '@angular/material/table';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import {MatIconModule} from "@angular/material/icon";
+import { MatIconModule } from '@angular/material/icon';
+import { FormReporteComponent } from './components/reportes/form-reporte/form-reporte.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
-  declarations: [AppComponent, ReportesComponent, NavBarComponent],
+  declarations: [
+    AppComponent,
+    ReportesComponent,
+    NavBarComponent,
+    FormReporteComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,6 +29,9 @@ import {MatIconModule} from "@angular/material/icon";
     MatTableModule,
     HttpClientModule,
     MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],
