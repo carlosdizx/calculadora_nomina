@@ -5,12 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReportesComponent } from './components/reportes/reportes.component';
-import {MatTableModule} from "@angular/material/table";
+import { MatTableModule } from '@angular/material/table';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, ReportesComponent, NavBarComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatTableModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
