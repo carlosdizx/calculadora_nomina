@@ -9,14 +9,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class FormReporteComponent implements OnInit {
   reporte: Reporte = new Reporte();
-  formulario: FormGroup;
+  public formGroup: FormGroup;
 
   constructor(public formBuilder: FormBuilder) {
-    this.formulario = this.formBuilder.group({
-      tecnico: [''],
-      servicio: [''],
-      fecha_inicio: [new Date()],
-      fecha_finalizacion: [new Date()],
+    this.formGroup = this.formBuilder.group({
+      tecnico: '',
+      servicio: '',
+      fecha_inicio: '',
+      fecha_finalizacion: '',
     });
   }
 
