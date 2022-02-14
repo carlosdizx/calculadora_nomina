@@ -9,6 +9,7 @@ import { ReporteService } from '../../../services/reporte.service';
   styleUrls: [],
 })
 export class FormReporteComponent implements OnInit {
+  servicios: any[] = [];
   reporte: Reporte = new Reporte();
   public formulario: FormGroup;
 
@@ -19,9 +20,15 @@ export class FormReporteComponent implements OnInit {
     this.formulario = this.formBuilder.group({
       tecnico: '',
       servicio: '',
-      fecha_inicio: new Date(),
-      fecha_finalizacion: new Date(),
+      fecha_inicio: '',
+      fecha_finalizacion: '',
     });
+  }
+
+  listarServicios(): any {
+    this.service
+      .listarServicios()
+      .subscribe((respuesta: any) => (this.servicios = respuesta.servicios));
   }
 
   registrarReporte(): void {
@@ -40,5 +47,7 @@ export class FormReporteComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.listarServicios();
+  }
 }

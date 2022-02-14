@@ -14,6 +14,10 @@ export class ReporteService {
   listarReportes(): Observable<any> {
     return this.http.get<any>(this.API);
   }
+
+  listarServicios(): Observable<any> {
+    return this.http.get<any>(this.API + 'servicios');
+  }
   registrarReporte(reporte: Reporte): Observable<any> {
     return this.http.post<any>(this.API, reporte);
   }

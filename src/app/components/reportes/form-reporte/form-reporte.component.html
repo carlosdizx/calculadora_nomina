@@ -18,10 +18,9 @@
         formControlName="servicio"
         required
       >
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="2">Three</option>
-        <option value="2">Four</option>
+        <option *ngFor="let servicio of servicios" [ngValue]="servicio">
+          {{ servicio }}
+        </option>
       </select>
     </div>
     <div class="my-3">
@@ -45,6 +44,7 @@
       />
     </div>
     <button
+      [disabled]="formulario.invalid"
       type="submit"
       class="btn btn-success"
     >
