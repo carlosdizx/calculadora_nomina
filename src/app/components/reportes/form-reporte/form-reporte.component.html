@@ -1,5 +1,5 @@
 <div>
-  <form [formGroup]="formGroup">
+  <form [formGroup]="formulario" (ngSubmit)="registrarReporte()">
     <div class="my-3">
       Técnio
       <input
@@ -45,7 +45,6 @@
       />
     </div>
     <button
-      [disabled]="formGroup.invalid"
       type="submit"
       class="btn btn-success"
     >
