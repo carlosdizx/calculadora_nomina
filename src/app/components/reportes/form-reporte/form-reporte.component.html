@@ -1,16 +1,21 @@
 <div>
-  <form>
+  <form [formGroup]="formulario">
     <div class="my-3">
       Técnio
       <input
         type="text"
         class="form-control"
         placeholder="Identificacíon del técnico"
+        formControlName="tecnico"
       />
     </div>
     <div class="my-3">
       Servicio
-      <select class="form-select" placeholder="Servicio">
+      <select
+        class="form-select"
+        placeholder="Servicio"
+        formControlName="servicio"
+      >
         <option value="1">One</option>
         <option value="2">Two</option>
         <option value="2">Three</option>
@@ -23,7 +28,9 @@
         type="datetime-local"
         class="form-control"
         placeholder="Fecha de inicio"
+        formControlName="fecha_inicio"
       />
+      {{ formulario }}
     </div>
     <div class="my-3">
       Fecha y hora de finalización
@@ -31,6 +38,7 @@
         type="datetime-local"
         class="form-control"
         placeholder="Fecha de finalización"
+        formControlName="fecha_finalizacion"
       />
     </div>
     <button type="submit" class="btn btn-success">Registrar</button>
