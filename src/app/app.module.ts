@@ -9,6 +9,7 @@ import { MatTableModule } from '@angular/material/table';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [AppComponent, ReportesComponent, NavBarComponent],
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatTableModule,
     HttpClientModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
