@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReporteService } from '../../services/calculos.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-calculadora',
@@ -7,13 +8,27 @@ import { ReporteService } from '../../services/calculos.service';
   styleUrls: [],
 })
 export class CalculadoraComponent implements OnInit {
-  constructor(private service: ReporteService) {}
+  formulario: FormGroup;
+  mensajes: String[] = [];
+
+  constructor(
+    private service: ReporteService,
+    public formBuilder: FormBuilder
+  ) {
+    this.formulario = this.formBuilder.group({
+      tecnico: '',
+      semana: 0,
+    });
+  }
 
   horasTrabajadasPorSemana(): void {
+    this.mensajes = [];
+    const semana = this.formulario.value.semana.split('W')[1];
+    console.log(this.formulario.value.semana.split("W"));
     this.service
-      .horasTrabajadasPorSemana('1082749257', 13)
-      .subscribe((respuesta) => {
-        console.log(respuesta);
+      .horasTrabajadasPorSemana(this.formulario.value.tecnico, semana)
+      .subscribe((respuesta: any) => {
+        this.mensajes = Object.values(respuesta);
       });
   }
 
