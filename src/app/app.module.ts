@@ -17,6 +17,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { registerLocaleData } from '@angular/common';
 import localeES from '@angular/common/locales/es';
+import { CalculadoraComponent } from './components/calculadora/calculadora.component';
 
 registerLocaleData(localeES, 'es');
 
@@ -26,6 +27,7 @@ registerLocaleData(localeES, 'es');
     ReportesComponent,
     NavBarComponent,
     FormReporteComponent,
+    CalculadoraComponent,
   ],
   imports: [
     BrowserModule,
