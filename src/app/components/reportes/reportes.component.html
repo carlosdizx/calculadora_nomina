@@ -20,7 +20,7 @@
   <ng-container matColumnDef="Fecha de inicio">
     <th mat-header-cell *matHeaderCellDef>Fecha de inicio</th>
     <td mat-cell *matCellDef="let element">
-      {{ element.fecha_inicio | date: "medium" }}
+      {{ element.fecha_inicio | date :"short" }}
     </td>
   </ng-container>
 

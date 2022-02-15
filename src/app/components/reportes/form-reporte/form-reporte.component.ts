@@ -11,7 +11,8 @@ import { ReporteService } from '../../../services/reporte.service';
 export class FormReporteComponent implements OnInit {
   servicios: any[] = [];
   reporte: Reporte = new Reporte();
-  public formulario: FormGroup;
+  formulario: FormGroup;
+  errores: any[] = [];
 
   constructor(
     public formBuilder: FormBuilder,
@@ -36,13 +37,17 @@ export class FormReporteComponent implements OnInit {
     this.reporte.servicio = this.formulario.value.servicio;
     this.reporte.fecha_inicio = this.formulario.value.fecha_inicio;
     this.reporte.fecha_finalizacion = this.formulario.value.fecha_finalizacion;
-    console.log(this.reporte);
+    this.errores = [];
     this.service.registrarReporte(this.reporte).subscribe(
       (respuesta) => {
         console.log(respuesta);
       },
       (error) => {
-        console.log(error.error.errors);
+        if (error.error.errors) {
+          this.errores = error.error.errors;
+        } else {
+          this.errores.push(error.error.error)
+        }
       }
     );
   }
