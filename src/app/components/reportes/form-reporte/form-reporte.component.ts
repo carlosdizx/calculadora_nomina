@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Reporte } from '../../../models/Reporte';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ReporteService } from '../../../services/reporte.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-reporte',
@@ -16,7 +17,8 @@ export class FormReporteComponent implements OnInit {
 
   constructor(
     public formBuilder: FormBuilder,
-    private service: ReporteService
+    private service: ReporteService,
+    private router: Router
   ) {
     this.formulario = this.formBuilder.group({
       tecnico: '',
@@ -40,13 +42,13 @@ export class FormReporteComponent implements OnInit {
     this.errores = [];
     this.service.registrarReporte(this.reporte).subscribe(
       (respuesta) => {
-        console.log(respuesta);
+        this.router.navigateByUrl(`/reportes`);
       },
       (error) => {
         if (error.error.errors) {
           this.errores = error.error.errors;
         } else {
-          this.errores.push(error.error.error)
+          this.errores.push(error.error.error);
         }
       }
     );
