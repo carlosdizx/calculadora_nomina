@@ -5,7 +5,7 @@ import { Reporte } from '../../models/Reporte';
 @Component({
   selector: 'app-reportes',
   templateUrl: './reportes.component.html',
-  styleUrls: [],
+  styleUrls: ['reportes.component.css'],
 })
 export class ReportesComponent implements OnInit {
   columnas: string[] = [
