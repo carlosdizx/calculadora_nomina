@@ -24,7 +24,6 @@ export class CalculadoraComponent implements OnInit {
   horasTrabajadasPorSemana(): void {
     this.mensajes = [];
     const semana = this.formulario.value.semana.split('W')[1];
-    console.log(this.formulario.value.semana.split("W"));
     this.service
       .horasTrabajadasPorSemana(this.formulario.value.tecnico, semana)
       .subscribe((respuesta: any) => {
