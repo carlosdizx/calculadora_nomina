@@ -11,7 +11,7 @@ export class ReporteService {
 
   constructor(private http: HttpClient) {}
 
-  horasTrabajadasPorSemana(tecnico: String, semana: number): Observable<any> {
-    return this.http.get<any>(`${this.API}${tecnico}/${semana}`);
+  horasTrabajadasPorSemana(tecnico: String,anio: number, semana: number): Observable<any> {
+    return this.http.get<any>(`${this.API}${tecnico}/${anio}/${semana}`);
   }
 }

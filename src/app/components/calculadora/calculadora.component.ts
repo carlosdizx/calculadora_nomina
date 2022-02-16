@@ -17,15 +17,15 @@ export class CalculadoraComponent implements OnInit {
   ) {
     this.formulario = this.formBuilder.group({
       tecnico: '',
-      semana: 0,
+      semana: '',
     });
   }
 
   horasTrabajadasPorSemana(): void {
     this.mensajes = [];
-    const semana = this.formulario.value.semana.split('W')[1];
+    const datos = this.formulario.value.semana.split('-');
     this.service
-      .horasTrabajadasPorSemana(this.formulario.value.tecnico, semana)
+      .horasTrabajadasPorSemana(this.formulario.value.tecnico, datos[0],datos[1].substring(1))
       .subscribe((respuesta: any) => {
         this.mensajes = Object.values(respuesta);
       });
