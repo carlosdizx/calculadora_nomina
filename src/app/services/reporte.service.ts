@@ -7,7 +7,7 @@ import { Reporte } from '../models/Reporte';
   providedIn: 'root',
 })
 export class ReporteService {
-  API: string = 'http://localhost:1200/reportes/';
+  API: string = 'https://calculadora-nomina.herokuapp.com/reportes/';
 
   constructor(private http: HttpClient) {}
 

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ReporteService {
-  API: string = 'http://localhost:1200/calculos/';
+  API: string = 'https://calculadora-nomina.herokuapp.com/calculos/';
 
   constructor(private http: HttpClient) {}
 
