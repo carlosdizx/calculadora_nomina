@@ -7,7 +7,7 @@ import { Reporte } from '../models/Reporte';
   providedIn: 'root',
 })
 export class ReporteService {
-  API: string = 'http://localhost:1200/reportes/';
+  API: string = 'http://localhost:8080/reportes/';
 
   constructor(private http: HttpClient) {}
 
