@@ -32,16 +32,6 @@ export class CalculadoraComponent implements OnInit {
       .subscribe((respuesta: any) => {
         console.log(respuesta.mensaje);
         this.mensajes = respuesta.mensaje;
-        /*
-        if (typeof respuesta.mensaje === 'string') {
-          this.mensaje = respuesta.mensaje;
-          this.mensajes = [];
-        } else {
-          const resultado = Object.values(respuesta.mensaje);
-          this.mensaje = resultado[0];
-          this.mensajes = resultado[1];
-        }
-         */
       });
   }
 
