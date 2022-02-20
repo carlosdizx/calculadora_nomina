@@ -10,8 +10,6 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 export class CalculadoraComponent implements OnInit {
   formulario: FormGroup;
   mensajes: any = [];
-  mensaje: any = '';
-
   constructor(
     private service: ReporteService,
     public formBuilder: FormBuilder
@@ -33,16 +31,7 @@ export class CalculadoraComponent implements OnInit {
       )
       .subscribe((respuesta: any) => {
         console.log(respuesta.mensaje);
-        if (typeof respuesta.mensaje === 'string') {
-          this.mensaje = respuesta.mensaje;
-          this.mensajes = [];
-        } else {
-          const resultado = Object.values(respuesta.mensaje);
-          this.mensaje = resultado[0];
-          this.mensajes = resultado[1];
-        }
-        //this.mensaje = arreglo[0];
-        //this.mensajes = Object.values(respuesta)[1];
+        this.mensajes = respuesta.mensaje;
       });
   }
 
