@@ -34,8 +34,6 @@ export class CalculadoraComponent implements OnInit {
       )
       .subscribe(
         (respuesta) => {
-          console.log(respuesta);
-          //this.mensajes = respuesta.mensaje;
           this.total = 0;
           Object.values(respuesta.mensaje).forEach((msg: any, index: number) => {
             const llave: string = Object.keys(respuesta.mensaje)[index];
