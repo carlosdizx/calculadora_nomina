@@ -10,6 +10,9 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 export class CalculadoraComponent implements OnInit {
   formulario: FormGroup;
   mensajes: any = [];
+  mensaje: string = '';
+  total: number = 0;
+
   constructor(
     private service: ReporteService,
     public formBuilder: FormBuilder
@@ -29,10 +32,35 @@ export class CalculadoraComponent implements OnInit {
         datos[0],
         datos[1].substring(1)
       )
-      .subscribe((respuesta: any) => {
-        console.log(respuesta.mensaje);
-        this.mensajes = respuesta.mensaje;
-      });
+      .subscribe(
+        (respuesta) => {
+          console.log(respuesta);
+          //this.mensajes = respuesta.mensaje;
+          this.total = 0;
+          Object.values(respuesta.mensaje).forEach((msg: any, index: number) => {
+            const llave: string = Object.keys(respuesta.mensaje)[index];
+            if (llave === "normales") {
+              this.mensajes.push("Normales " + msg);
+            } else if (llave === "nocturnas") {
+              this.mensajes.push("Nocturnas " + msg);
+            } else if (llave === "dominicales") {
+              this.mensajes.push("Dominicales " + msg);
+            } else if (llave === "normales_extra") {
+              this.mensajes.push("Normales extra " + msg);
+            } else if (llave === "nocturnas_extra") {
+              this.mensajes.push("Nocturnas extra " + msg);
+            } else {
+              this.mensajes.push("Dominicales extra " + msg);
+            }
+            this.total += msg;
+          });
+          this.mensaje = '';
+        },
+        (error) => {
+          this.mensaje = 'Sin datos';
+          this.total = 0;
+        }
+      );
   }
 
   ngOnInit(): void {
