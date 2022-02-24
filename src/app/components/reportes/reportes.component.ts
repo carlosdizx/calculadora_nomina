@@ -30,7 +30,6 @@ export class ReportesComponent implements OnInit {
         this.titulo = 'Listado de reportes';
       }
     });
-    console.log(this.titulo);
   }
 
   ngOnInit(): void {

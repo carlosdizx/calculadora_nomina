@@ -29,7 +29,7 @@ describe('CalculadoraComponent', () => {
 
   describe('[Form validations]', () => {
     describe('Control "x"', () => {
-      it('When this control has an empty value, be invalid control - required', () => {
+      it('When this control has an error in the inputs, be invalid control', () => {
         const tecnico = component.formulario.get('tecnico');
         const semana = component.formulario.get('semana');
 
