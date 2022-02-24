@@ -1,5 +1,9 @@
+<div class="alert alert-primary" role="alert">
+  <h1>{{ titulo }}</h1>
+</div>
 <button routerLink="crear" class="btn btn-info">
-  Agregar reporte<mat-icon>add</mat-icon>
+  Agregar reporte
+  <mat-icon>add</mat-icon>
 </button>
 <table mat-table [dataSource]="reportes" class="mat-elevation-z8">
   <ng-container matColumnDef="ID">
@@ -20,7 +24,7 @@
   <ng-container matColumnDef="Fecha de inicio">
     <th mat-header-cell *matHeaderCellDef>Fecha de inicio</th>
     <td mat-cell *matCellDef="let element">
-      {{ element.fecha_inicio | date :"h:mm a dd/MMMM/yyyy" }}
+      {{ element.fecha_inicio | date: "h:mm a dd/MMMM/yyyy" }}
     </td>
   </ng-container>
 
