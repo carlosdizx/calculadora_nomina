@@ -18,25 +18,28 @@ export class ReportesComponent implements OnInit {
 
   reportes: Reporte[] = [];
 
-  titulo: string = '';
+  titulo: string = 'No hay reportes que mostrar';
 
-  constructor(private service: ReporteService) {}
-
-  listarReportes(): void {
-    this.service
-      .listarReportes()
-      .subscribe((respuesta) => (this.reportes = respuesta.reportes));
+  constructor(private service: ReporteService) {
   }
 
-  ngOnCreated(): void {
-    this.listarReportes();
+  listarReportes(): void {
+    this.service.listarReportes().subscribe(async (respuesta) => {
+      this.reportes = respuesta.reportes;
+      if (this.reportes.length > 0) {
+        this.titulo = 'Listado de reportes';
+      }
+    });
+    console.log(this.titulo);
   }
 
   ngOnInit(): void {
+    this.listarReportes();
+  }
+
+  ngOnChanges(): void {
     if (this.reportes.length > 0) {
       this.titulo = 'Listado de reportes';
-    } else {
-      this.titulo = 'No hay reportes que mostrar';
     }
   }
 }
