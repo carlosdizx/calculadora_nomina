@@ -18,6 +18,8 @@ export class ReportesComponent implements OnInit {
 
   reportes: Reporte[] = [];
 
+  titulo: string = '';
+
   constructor(private service: ReporteService) {}
 
   listarReportes(): void {
@@ -26,7 +28,15 @@ export class ReportesComponent implements OnInit {
       .subscribe((respuesta) => (this.reportes = respuesta.reportes));
   }
 
-  ngOnInit(): void {
+  ngOnCreated(): void {
     this.listarReportes();
+  }
+
+  ngOnInit(): void {
+    if (this.reportes.length > 0) {
+      this.titulo = 'Listado de reportes';
+    } else {
+      this.titulo = 'No hay reportes que mostrar';
+    }
   }
 }

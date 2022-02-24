@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Reporte } from '../../../models/Reporte';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReporteService } from '../../../services/reporte.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -21,10 +21,10 @@ export class FormReporteComponent implements OnInit {
     private router: Router
   ) {
     this.formulario = this.formBuilder.group({
-      tecnico: '',
-      servicio: '',
-      fecha_inicio: '',
-      fecha_finalizacion: '',
+      tecnico: ['', [Validators.required, Validators.min(3)]],
+      servicio: ['', [Validators.required]],
+      fecha_inicio: ['', [Validators.required]],
+      fecha_finalizacion: ['', [Validators.required]],
     });
   }
 
