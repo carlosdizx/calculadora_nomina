@@ -21,7 +21,7 @@ export class FormReporteComponent implements OnInit {
     private router: Router
   ) {
     this.formulario = this.formBuilder.group({
-      tecnico: ['', [Validators.required, Validators.minLength(3)]],
+      tecnico: ['', [Validators.required, Validators.minLength(3),Validators.maxLength(15)]],
       servicio: ['', [Validators.required]],
       fecha_inicio: ['', [Validators.required]],
       fecha_finalizacion: ['', [Validators.required]],
