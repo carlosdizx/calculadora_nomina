@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CalculadoraComponent } from './calculadora.component';
-import { DebugElement } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {CalculadoraComponent} from './calculadora.component';
+import {DebugElement} from '@angular/core';
+import {ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('CalculadoraComponent', () => {
   let component: CalculadoraComponent;

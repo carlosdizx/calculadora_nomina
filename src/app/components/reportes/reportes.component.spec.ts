@@ -1,9 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientModule } from '@angular/common/http';
-import { ReportesComponent } from './reportes.component';
-import { DebugElement } from '@angular/core';
-import { Reporte } from '../../models/Reporte';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {RouterTestingModule} from '@angular/router/testing';
+import {HttpClientModule} from '@angular/common/http';
+import {ReportesComponent} from './reportes.component';
+import {DebugElement} from '@angular/core';
+import {Reporte} from '../../models/Reporte';
 
 describe('ReportesComponent', () => {
   let component: ReportesComponent;

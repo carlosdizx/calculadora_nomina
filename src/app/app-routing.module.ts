@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { ReportesComponent } from './components/reportes/reportes.component';
-import { FormReporteComponent } from './components/reportes/form-reporte/form-reporte.component';
-import { CalculadoraComponent } from './components/calculadora/calculadora.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {ReportesComponent} from './components/reportes/reportes.component';
+import {FormReporteComponent} from './components/reportes/form-reporte/form-reporte.component';
+import {CalculadoraComponent} from './components/calculadora/calculadora.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'reportes', pathMatch: 'full' },

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Reporte } from '../../../models/Reporte';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ReporteService } from '../../../services/reporte.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Reporte} from '../../../models/Reporte';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ReporteService} from '../../../services/reporte.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-form-reporte',
@@ -21,7 +21,14 @@ export class FormReporteComponent implements OnInit {
     private router: Router
   ) {
     this.formulario = this.formBuilder.group({
-      tecnico: ['', [Validators.required, Validators.minLength(3),Validators.maxLength(15)]],
+      tecnico: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(15),
+        ],
+      ],
       servicio: ['', [Validators.required]],
       fecha_inicio: ['', [Validators.required]],
       fecha_finalizacion: ['', [Validators.required]],

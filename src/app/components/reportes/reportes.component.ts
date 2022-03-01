@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ReporteService } from '../../services/reporte.service';
-import { Reporte } from '../../models/Reporte';
+import {Component, OnInit} from '@angular/core';
+import {ReporteService} from '../../services/reporte.service';
+import {Reporte} from '../../models/Reporte';
 
 @Component({
   selector: 'app-reportes',
@@ -20,8 +20,7 @@ export class ReportesComponent implements OnInit {
 
   titulo: string = 'No hay reportes que mostrar';
 
-  constructor(private service: ReporteService) {
-  }
+  constructor(private service: ReporteService) {}
 
   listarReportes(): void {
     this.service.listarReportes().subscribe(async (respuesta) => {
